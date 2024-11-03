@@ -20,7 +20,6 @@ public class SpelGUI extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setVisible(true);
-        System.out.println("testar om det kommer upp på github");
 
     }
 
