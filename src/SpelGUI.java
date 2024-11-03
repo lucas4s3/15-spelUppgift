@@ -44,6 +44,7 @@ public class SpelGUI extends JFrame implements ActionListener {
         JButton emptyButton = new JButton(" ");
         panel.add(emptyButton);
         buttons.add(emptyButton);
+        System.out.println("xael");
     }
 
     @Override
