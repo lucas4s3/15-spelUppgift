@@ -13,6 +13,7 @@ public class SpelGUI extends JFrame implements ActionListener {
         JButton startButton = new JButton("Nytt spel");
         buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.add(startButton);
+        System.out.println("test");
 
         add(buttonPanel, BorderLayout.NORTH);
         add(panel,BorderLayout.CENTER);
