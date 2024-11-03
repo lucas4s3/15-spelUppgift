@@ -21,6 +21,7 @@ public class SpelGUI extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
         setVisible(true);
         System.out.println("testar om det kommer upp på github");
+        System.out.println("axel test");
 
     }
 
