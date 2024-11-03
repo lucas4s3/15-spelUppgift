@@ -2,12 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class SpelGUI extends JFrame implements ActionListener {
+    ArrayList<JButton> buttons = new ArrayList<>();
+    private JPanel panel;
+
     public SpelGUI(){
         setTitle("15-Spel");
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setLayout(new GridLayout(4,4));
+        this.createButtons();
 
         JPanel buttonPanel = new JPanel();
         JButton startButton = new JButton("Nytt spel");
@@ -26,6 +31,18 @@ public class SpelGUI extends JFrame implements ActionListener {
 
     public static void main(String[] args) {
         SpelGUI spel = new SpelGUI();
+    }
+
+    public void createButtons(){
+        for(int n = 1; n <= 15; n++){
+            JButton button = new JButton(Integer.toString(n));
+            button.addActionListener(this);
+            buttons.add(button);
+            panel.add(button);
+        }
+        JButton emptyButton = new JButton(" ");
+        panel.add(emptyButton);
+        buttons.add(emptyButton);
     }
 
     @Override
