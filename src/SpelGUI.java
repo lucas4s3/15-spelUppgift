@@ -11,12 +11,13 @@ public class SpelGUI extends JFrame implements ActionListener {
     private JPanel panel;
 
     public SpelGUI() {
-        //
+        //Skapar en facit lista
         for (int i = 1; i <= 15; i++) {
             buttonAnswer.add(Integer.toString(i));
         }
         buttonAnswer.add(" ");
 
+        // Skapar GUI för spelet
         setTitle("15-Spel");
         panel = new JPanel();
         panel.setLayout(new GridLayout(4, 4));
@@ -45,6 +46,8 @@ public class SpelGUI extends JFrame implements ActionListener {
     public static void main(String[] args) {
         SpelGUI spel = new SpelGUI();
     }
+
+    // Kontrollerar om listorna är likadana
     public boolean isSolved(){
         for (int i = 0; i < buttons.size(); i++) {
             if (!buttons.get(i).getText().equals(buttonAnswer.get(i))) {
@@ -54,6 +57,7 @@ public class SpelGUI extends JFrame implements ActionListener {
         return true;
     }
 
+    // Skapar knappar random i spelet
     public void createButtons() {
         buttons.clear();
         panel.removeAll();
@@ -74,6 +78,8 @@ public class SpelGUI extends JFrame implements ActionListener {
         pack();
         setLocationRelativeTo(null);
     }
+
+    // Skapar knappar så att spelet blir löst
     public void showFacit(){
         buttons.clear();
         panel.removeAll();
@@ -98,12 +104,14 @@ public class SpelGUI extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        // Klickar på start knapp och metoden createbuttons utförs
         JButton buttonStart = (JButton) e.getSource();
         if (buttonStart.getText().equals("Nytt spel")) {
             this.createButtons();
             panel.repaint();
             panel.revalidate();
             pack();
+            // Klickar på facit och facitmetoden görs
         } else if (buttonStart.getText().equals("Facit")) {
             this.showFacit();
         }
@@ -129,6 +137,7 @@ public class SpelGUI extends JFrame implements ActionListener {
                 panel.revalidate();
                 panel.repaint();
 
+                // Kontrollerar om spelet är löst och skrivet ut "Du har vunnit"
                 if (isSolved()){
                     JOptionPane.showMessageDialog(this, "Du har vunnit");
                 }
