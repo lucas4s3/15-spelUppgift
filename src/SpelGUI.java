@@ -11,6 +11,7 @@ public class SpelGUI extends JFrame implements ActionListener {
     private JPanel panel;
 
     public SpelGUI() {
+        //
         for (int i = 1; i <= 15; i++) {
             buttonAnswer.add(Integer.toString(i));
         }
