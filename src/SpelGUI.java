@@ -116,7 +116,7 @@ public class SpelGUI extends JFrame implements ActionListener {
             this.showFacit();
         }
 
-        for (int i = 0; i < buttons.size(); i++) {
+        for (int i = 0; i < buttons.size(); i++) { // kollar ifall knapparna i närheten finns och ifall de är tomma. byter plats om tom
             if (e.getActionCommand().equals(buttons.get(i).getActionCommand())) {
                 if (i - 4 >= 0 && buttons.get(i - 4).getActionCommand().equals(" ")) {
                     Collections.swap(buttons, i, i - 4);
@@ -130,12 +130,12 @@ public class SpelGUI extends JFrame implements ActionListener {
                 if ((i + 1) % 4 != 0 && buttons.get(i + 1).getActionCommand().equals(" ")) {
                     Collections.swap(buttons, i, i + 1);
                 }
-                panel.removeAll();
+                panel.removeAll(); //tömmer spelplanen
                 for (JButton button : buttons) {
-                    panel.add(button);
+                    panel.add(button); //itererar genom den nya listan och skapar upp knappar
                 }
-                panel.revalidate();
-                panel.repaint();
+                panel.revalidate(); //sätter knapparna i den nya ordningen
+                panel.repaint(); //gör ändringarna synliga på spelplanen
 
                 // Kontrollerar om spelet är löst och skrivet ut "Du har vunnit"
                 if (isSolved()){
