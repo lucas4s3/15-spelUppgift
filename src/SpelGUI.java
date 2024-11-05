@@ -105,14 +105,14 @@ public class SpelGUI extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         // Klickar på start knapp och metoden createbuttons utförs
-        JButton buttonStart = (JButton) e.getSource();
-        if (buttonStart.getText().equals("Nytt spel")) {
+        JButton buttonAction = (JButton) e.getSource();
+        if (buttonAction.getText().equals("Nytt spel")) {
             this.createButtons();
             panel.repaint();
             panel.revalidate();
             pack();
             // Klickar på facit och facitmetoden görs
-        } else if (buttonStart.getText().equals("Facit")) {
+        } else if (buttonAction.getText().equals("Facit")) {
             this.showFacit();
         }
 
